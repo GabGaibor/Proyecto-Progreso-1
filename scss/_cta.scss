@@ -1,0 +1,12 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.cta {
+  background: linear-gradient(135deg, $blue, $blue-light 60%, #3b7a86);
+  color: $white;
+  text-align: center;
+  padding: 64px 24px;
+  &__title { font-size: 32px; margin-bottom: $space-md; @include respond(desktop) { font-size: 40px; } }
+  &__text { max-width: 760px; margin: 0 auto $space-lg; }
+  &__actions { @include flex-center($space-sm); flex-wrap: wrap; }
+}

@@ -1,0 +1,16 @@
+@use "variables" as *;
+
+@mixin respond($bp) {
+  @if $bp == tablet {
+    @media (min-width: $bp-tablet) { @content; }
+  } @else if $bp == desktop {
+    @media (min-width: $bp-desktop) { @content; }
+  }
+}
+
+@mixin flex-center($gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}

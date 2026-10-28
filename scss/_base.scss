@@ -1,0 +1,35 @@
+@use "sass:color";
+@use "variables" as *;
+@use "mixins" as *;
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+body {
+  font-family: $font;
+  color: $text;
+  background: $bg;
+  line-height: 1.5;
+}
+
+a { color: $blue; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.container {
+  padding-inline: 24px;
+  @include respond(tablet) { padding-inline: 40px; }
+  @include respond(desktop) { padding-inline: $margin; }
+}
+
+.btn {
+  display: inline-block;
+  background: $white;
+  color: $blue;
+  font-weight: 700;
+  padding: 14px 28px;
+  border: 1px solid $blue;
+
+  &--outline { background: transparent; color: $white; border-color: $white; }
+  &:hover { background: $blue-light; color: $white; }
+}
+
+.img { background: linear-gradient(135deg, #5b7fa6, #1a4d80 60%, $green); }

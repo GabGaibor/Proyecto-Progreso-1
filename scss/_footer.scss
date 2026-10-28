@@ -1,0 +1,18 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.footer {
+  background: $blue-dark;
+  color: rgba($white, .85);
+  padding-block: 64px 32px;
+
+  &__top { display: grid; gap: $space-md; @include respond(desktop) { grid-template-columns: 1fr 3fr; } }
+  &__cta { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: $space-md; }
+  &__cols { display: grid; gap: $space-lg; margin-block: $space-xl;
+    @include respond(tablet) { grid-template-columns: repeat(3, 1fr); }
+    @include respond(desktop) { grid-template-columns: 1fr repeat(3, 1fr); } }
+  &__heading { font-size: 14px; letter-spacing: .08em; margin-bottom: $space-md; color: $white; }
+  &__link { display: block; color: inherit; margin-bottom: $space-md; }
+  &__legal { border-top: 1px solid $green; padding-top: $space-md; font-size: 14px;
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: $space-sm; }
+}

@@ -1,0 +1,15 @@
+@use "base";
+@use "nav";
+@use "hero";
+@use "sidebar";
+@use "card";
+@use "cta";
+@use "footer";
+@use "mixins" as *;
+
+.layout {
+  display: grid;
+  gap: 24px;
+  padding-block: 64px;
+  @include respond(desktop) { grid-template-columns: 1fr 2fr; }
+}

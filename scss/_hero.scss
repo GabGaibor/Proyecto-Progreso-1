@@ -1,0 +1,21 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.hero {
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: $space-md 16px 0;
+  background: linear-gradient(160deg, #9fb7c9, #4f6f55 70%);
+  @include respond(desktop) { min-height: 590px; padding-inline: 36px; }
+
+  &__panel {
+    background: rgba($blue, .9);
+    color: $white;
+    padding: $space-lg $space-md;
+    @include respond(desktop) { width: 50%; padding: 48px $space-xl; }
+  }
+  &__crumbs { font-size: 14px; margin-bottom: $space-xs; a { color: $white; } }
+  &__title { font-size: 40px; line-height: 1.15; @include respond(desktop) { font-size: 56px; } }
+}
